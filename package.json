@@ -83,5 +83,6 @@
       }
     },
     "files": ["css", "fonts", "js"]
-  }
+  },
+  "deployThemeLocation": "../site/wp-content/themes/iaw-bootstrap"
 }

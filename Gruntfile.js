@@ -293,6 +293,12 @@ module.exports = function (grunt) {
           '**/*'
         ],
         dest: 'docs/dist/'
+      },
+      deployTheme: {
+        expand: true,
+        cwd: 'dist',
+        src: '**/*',
+        dest: '<%= pkg.deployThemeLocation %>'
       }
     },
 
@@ -459,6 +465,9 @@ module.exports = function (grunt) {
 
   // Full distribution task.
   grunt.registerTask('dist', ['clean:dist', 'dist-css', 'copy:fonts', 'dist-js']);
+
+  // Deploy to theme
+  grunt.registerTask('deployTheme', ['dist', 'copy:deployTheme']);
 
   // Default task.
   grunt.registerTask('default', ['clean:dist', 'copy:fonts', 'test']);
